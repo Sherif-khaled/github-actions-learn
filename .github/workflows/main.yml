@@ -15,3 +15,8 @@ jobs:
       - name: Echo Welcom
         run: echo "Welcom to github actions"
 
+      - name: Run Multiple Commands Test
+        run: |
+          echo "Name: sherif khaled"
+          echo "Job: Devops Engineer"
+

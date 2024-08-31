@@ -1,0 +1,17 @@
+name: Build & Deploy startup
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repo
+        uses: actions/checkout@v4
+
+      - name: Echo Welcom
+        run: echo "Welcom to github actions"
+

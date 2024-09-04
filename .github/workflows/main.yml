@@ -35,5 +35,5 @@ jobs:
           context: .
           dockerfile: Dockerfile
           push: true
-          tags: sheriflhaled/crud-php-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/crud-php-app:latest
 

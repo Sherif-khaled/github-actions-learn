@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  app:
+    container_name: app
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      APP_HOST: db
+      APP_PORT: db
+      APP_DATABASE_NAME: test_db
+      APP_DATABASE_USER_NAME: root
+      APP_DATABASE_PASSWORD: p@ssw0rd
+
+  db:
+    container_name: db
+    image: mysql:latest
+    hostname: DB
+    environment:
+      - MYSQL_PASSWORD=p@ssw0rd
+      - MYSQL_ROOT_PASSWORD=p@ssw0rd
+      - MYSQL_DATABASE=test_db

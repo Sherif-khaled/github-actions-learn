@@ -7,7 +7,7 @@ $db = $database->getConnection();
 try {
 
     // SQL query to create the table if it doesn't exist
-    $sql = "CREATE TABLE IF NOT EXISTS `user` (
+    $sql = "CREATE TABLE IF NOT EXISTS `users` (
                 `id` INT NOT NULL AUTO_INCREMENT,
                 `username` VARCHAR(50) NOT NULL,
                 `email` VARCHAR(100) NOT NULL,

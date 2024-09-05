@@ -1,0 +1,39 @@
+name: CI - Build & Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repo
+        uses: actions/checkout@v4
+
+      - name: Unit Test
+        run: echo "The app tested"
+
+      - name: Run Multiple Commands Test
+        run: |
+          echo "Name: sherif khaled"
+          echo "Job: Devops Engineer"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          dockerfile: Dockerfile
+          push: false

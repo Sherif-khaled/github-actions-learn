@@ -24,7 +24,7 @@ jobs:
       - name: Merge main into stage
         run: |
           git checkout stage
-          git merge main
+          git merge main --allow-unrelated-histories
 
       - name: Push changes to stage
         run: git push origin stage

@@ -30,4 +30,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/Sherif-khaled/github-actions-learn.git stage
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Sherif-khaled/github-actions-learn.git stage

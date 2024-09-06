@@ -27,4 +27,7 @@ jobs:
           git merge -X ours main --allow-unrelated-histories
 
       - name: Push changes to stage
-        run: git push origin stage
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/Sherif-khaled/github-actions-learn.git stage
